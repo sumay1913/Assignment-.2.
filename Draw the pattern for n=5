@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int n = 5; // Size of the pattern (5x5 in this case)
+    int size = 2 * n - 1; // Total size of the grid
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            // Calculate the value to print
+            int value = n - (i < j ? i : j);
+            value = n - (value < (size - 1 - j) ? value : (size - 1 - j));
+            printf("%d ", value);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
