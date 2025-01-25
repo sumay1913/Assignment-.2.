@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int n = 5; // Size of the pattern (number of rows or columns)
+
+    // Total number of rows and columns for the pattern
+    int size = 2 * n - 1;
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            // Print '*' when the position is on the diagonal or anti-diagonal
+            if (i == j || i + j == size - 1) {
+                printf("* ");
+            } else {
+                printf("  "); // Print spaces elsewhere
+            }
+        }
+        printf("\n"); // Move to the next row
+    }
+
+    return 0;
+}
