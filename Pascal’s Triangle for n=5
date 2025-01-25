@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int n = 5; // Number of rows in Pascal's Triangle
+    int coeff; // Variable to store binomial coefficient
+
+    for (int i = 0; i < n; i++) {
+        // Print leading spaces for alignment
+        for (int space = 0; space < n - i - 1; space++) {
+            printf(" ");
+        }
+
+        // Calculate and print each coefficient in the row
+        coeff = 1; // First coefficient in a row is always 1
+        for (int j = 0; j <= i; j++) {
+            printf("%d ", coeff);
+            coeff = coeff * (i - j) / (j + 1); // Update coefficient using binomial formula
+        }
+
+        printf("\n"); // Move to the next row
+    }
+
+    return 0;
+}
