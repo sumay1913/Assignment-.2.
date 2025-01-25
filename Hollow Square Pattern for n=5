@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int n = 5; // Size of the square
+
+    for (int i = 0; i < n; i++) {
+        if (i == 0 || i == n - 1) {
+            // Print a full row of stars for the first and last row
+            for (int j = 0; j < n; j++) {
+                printf("*");
+            }
+        } else {
+            // Print a hollow row
+            printf("*"); // First star
+            for (int j = 0; j < n - 2; j++) {
+                printf(" "); // Spaces in the middle
+            }
+            printf("*"); // Last star
+        }
+        printf("\n"); // Move to the next line
+    }
+
+    return 0;
+}
